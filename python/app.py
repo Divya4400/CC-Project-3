@@ -1,8 +1,13 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List
+from middleware import add_middleware
+
 
 app = FastAPI()
+
+# add middleware
+add_middleware(app)
 
 class Recommendation(BaseModel):
     description: str
