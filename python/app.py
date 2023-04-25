@@ -18,9 +18,10 @@ async def get_recommendations(text: str):
     # Your code to generate recommendations goes here
     recommendations = [
         Recommendation(description="A calm and mellow piano piece with a simple melody.", 
-                       music_url="https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand60.wav"),
-        """ Recommendation(description="An upbeat pop song with a catchy guitar riff and female vocals.", 
-                       music_url="https://www2.cs.uic.edu/~i101/SoundFiles/ImperialMarch60.wav") """
+                       music_url="https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand60.wav")
+        #,
+        #Recommendation(description="An upbeat pop song with a catchy guitar riff and female vocals.", 
+                       #music_url="https://www2.cs.uic.edu/~i101/SoundFiles/ImperialMarch60.wav")
     ]
     return {"recommendations": recommendations}
 
