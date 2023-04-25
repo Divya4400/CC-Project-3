@@ -1,27 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Music Gallery </title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+<html>
+<head>
+<style>
+/* Global Reset */
+* {
+    font-family: 'Allerta', arial, Tahoma;
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(to left, #7700aa, #8800ff);
+    text-align:center;
+    color:#fff;
+}
+h3{
+    text-shadow:1px 1px 1px #fff;
+}
+/* Start  styling the page */
+.container-audio {
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #eee;
+    color: #444;
+    margin: 20px auto;
+    overflow: hidden;
+}
+audio {
+  width:100%;
+}
 
-    <div class="container">
+.container_new {
+	  display: flex;
+	  width: 500px;
+	  padding: 4px;
+	  padding-left: 20px;
+	  justify-content: center;
+	  align-items: center;
+	  margin: auto;
+	  background-color: #fce6ef;
+	  border-radius: 50px;
+	  border: 1px solid #ffc5dd;
+	}
 
-    <div class="heading">Music Gallery</div>
+	input {
+	  width: 100%;
+	  height: 54px;
+	  background: none;
+	  border: 0;
+	  padding: 0;
+	  outline: none;
+	}
 
-    <div class="music-container">
-    
-        <form id="search-form">
-            <input type="text" placeholder="Search...">
-            <button type="submit">Search</button>
-          </form>
-          
-    <div id="results"></div>
+	button {
+	  height: 54px;
+	  width: 94px;
+	  background-color: #ff0266;
+	  color: #ffffff;
+	  text-transform: uppercase;
+	  border-style: none;
+	  border-radius: 50px;
+	  cursor: pointer;
+	  outline: none;
+	}
+	
+	
+}
 
-    <script>
+</style>
+
+</head>
+<body>
+
+<link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet'>
+
+
+    <h1>Project 3 - Text-based music recommendations</h1>
+	</br></br>
+	<form id="search-form">
+		<div class="container_new">
+				
+				<input type="text" placeholder="What kinds of sounds are you searching for?">
+				<button type="submit">Search</button>
+				
+		</div>
+	</form>
+	</br></br>
+	<div id="results"></div>
+	
+	<script>
         const form = document.getElementById('search-form');
         const resultsDiv = document.getElementById('results');
       
@@ -47,62 +114,29 @@
           resultsDiv.innerHTML = '';
       
           data.recommendations.forEach((recommendation) => {
-            const description = document.createElement('div');
-		description.className = "music";
+            
+			const description = document.createElement('div');
+			description.className = "container-audio";
             description.textContent = recommendation.description;
+			
+			const audioDiv = document.createElement('div');
+			audioDiv.className = "container-audio";
       
             const audio = document.createElement('audio');
             audio.controls = true;
             const source = document.createElement('source');
             source.src = recommendation.music_url;
             audio.appendChild(source);
+			audioDiv.appendChild(audio);
       
             const resultDiv = document.createElement('div');
-            resultDiv.appendChild(description);
-            resultDiv.appendChild(audio);
+            resultDiv.appendChild(audioDiv);
+			resultDiv.appendChild(description);
+            
       
             resultsDiv.appendChild(resultDiv);
           });
         }
       </script>
-<!--
-    <div class="box">
-        <div class="image">
-            <img src="thumb1.jpg" alt="">
-        </div>
-        <div class="music">
-            <audio src="music1.mp3" controls></audio>
-        </div>
-    </div>
-
-    <div class="box">
-        <div class="image">
-            <img src="thumb2.jpg" alt="">
-        </div>
-        <div class="music">
-            <audio src="music2.mp3" controls></audio>
-        </div>
-    </div>
-
-    <div class="box">
-        <div class="image">
-            <img src="thumb3.jpg" alt="">
-        </div>
-        <div class="music">
-            <audio src="music3.mp3" controls></audio>
-        </div>
-    </div>
-
-    <div class="box">
-        <div class="image">
-            <img src="thumb4.jpg" alt="">
-        </div>
-        <div class="music">
-            <audio src="music4.mp3" controls></audio>
-        </div>
-    </div>
--->
-    </div>
-    </div>
-    </body>
+</body>
 </html>
