@@ -8,45 +8,45 @@ html{
 }
 
 .container{
-    background: #222;
+    background: #1298ad;
 }
 
 .container .search-form{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-      }
-      
-.container .search-form .input{
-        width: 200px;
-        height: 30px;
-        padding: 5px;
-        border: none;
-        border-radius: 20px;
-        outline: none;
-      }
-      
-.container .search-form .button{
-        width: 80px;
-        height: 30px;
-        margin-left: 10px;
-        background-color: #0066CC;
-        color: #fff;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-        outline: none;
-      }
-      
-.container .search-form .button.button:hover {
-        background-color: #004C99;
-      }
-      
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.container .search-form input[type="text"]{
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+.container .search-form button[type="submit"]{
+    width: 80px;
+    height: 30px;
+    margin-left: 10px;
+    background-color: #0066CC;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+.container .search-form button[type="submit"]:hover {
+    background-color: #004C99;
+}
+
 .container .heading{
     font-size: 3rem;
-    padding:2rem 0;
-    text-align: centre;
+    padding: 2rem 0;
+    text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-shadow: 0 .5rem 1rem #000;
     color: #fff;
@@ -54,42 +54,56 @@ html{
 
 .container .music-container{
     display: flex;
-    align-items: centre;
+    align-items: center;
     flex-flow: column;
 }
 
-.container .music-container .box{
-    height:16rem;
-    width:80%;
+.container #results{
     display: flex;
-    align-items: center;
-    background: #f9f9f9;
-    border-radius: 1rem;
-    box-shadow: 0 .5rem 1rem #000;
-    overflow: hidden;
-    margin:2rem; 
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
-.container .music-container .box .image{
-    height:100%;
-    width:25%;
+.container #results .music {
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: #fff;
+    text-align: center;
 }
 
-.container .music-container .box .image img{
-    height:100%;
-    width:100%;
-    object-fit: cover;
-}
-
-.container .music-container .box .music{
-    width:75%
-}
-
-.container .music-container .box .music audio{
-    width:100%;
+.container #results .music audio{
+     width: 100%;
     outline: none;
 }
 
-.container .music-container .box .music audio::-webkit-media-controls-eclosure{
+.container #results .music audio::-webkit-media-controls-enclosure{
     background: none;
+}
+
+.container #results .box{
+    height: 16rem;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    background: #6e0bc5;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem #000;
+    overflow: hidden;
+    margin: 2rem; 
+}
+
+.container #results .box .image{
+    height: 100%;
+    width: 25%;
+}
+
+.container #results .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container #results .box .music{
+    width: 75%;
 }
